@@ -1,6 +1,7 @@
 <h1>Page show for one list</h1>
 <h2><%= @list.name %> list</h2>
 
+<h2>Add a new bookmark</h2>
 <%= simple_form_for [@list, @bookmark] do |f| %>
   <%= f.input :comment %>
   <%= f.association :movie %>
@@ -16,6 +17,10 @@
           <h5 class="card-title"><%= movie.title %>-<%= movie.rating %><i class="fas fa-star"></i></h5>
           <p class="card-text"><%= movie.overview %></p>
           <i class="fas fa-quote-left"></i><%= Bookmark.find_by(list: @list, movie: movie).comment %></p>
+          <%= link_to "Delete",
+            list_bookmark_path(@list, Bookmark.find_by(list: @list, movie: movie)),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
         </div>
       </div>
     <% end %>
