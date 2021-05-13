@@ -1,0 +1,6 @@
+<h1>Lists index page for all lists</h1>
+<ul>
+  <% @lists.each do |list| %>
+    <li><%= link_to list.name, list_path(list) %></li>
+  <% end %>
+</ul>
