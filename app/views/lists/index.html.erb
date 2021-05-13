@@ -1,14 +1,20 @@
-<h1>Lists index page for all lists</h1>
+<div class="banner" style="background-image: linear-gradient(#f8f9fa00,rgb(0 0 0 / 15%)), url(https://images.unsplash.com/photo-1493804714600-6edb1cd93080?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80);">
+  <div class="container">
+    <h1>The best ranking list ever!</h1>
+    <p>We've prepared six lists of film, TV series and japanesse animes for you</p>
+  </div>
+</div>
 
-<div class="container">
+<div class="container mt-5">
   <div class="d-flex justify-content-center row">
     <% @lists.each do |list| %>
-      <div class="card" style="width: 18rem;">
-        <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1040&q=80" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title"><%= list.name %></h5>
-          <%= link_to list.name, list_path(list), class:"btn btn-primary" %>
-        </div>
+      <div class="card m-4" style="width: 18rem;">
+        <%= link_to list_path(list) do %>
+          <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1040&q=80" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title d-flex justify-content-center"><%= list.name %></h5>
+          </div>
+        <% end %>
       </div>
     <% end %>
   </div>

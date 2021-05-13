@@ -1,6 +1,10 @@
 class ListsController < ApplicationController
   def index
     @lists = List.all
+    @search = params[:query]
+    if @search.present?
+      @lists = List.where("name LIKE '%#{@search}%'")
+    end
   end
 
   def show
