@@ -5,22 +5,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
   font-size: 24px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
-}
-
-.card.m-4 {
-  box-shadow: 0 5px 10px rgba(154,160,185,.05), 0 15px 40px rgba(166,173,201,.2);
-  border-radius: 10px;
-}
-
-.btn {
-  border-radius: 10px;
-  padding-left: 15px;
-  padding-right: 25px;
+  
+  h2 {
+    color: white !important;
+  }
 }
 
 .card-title {

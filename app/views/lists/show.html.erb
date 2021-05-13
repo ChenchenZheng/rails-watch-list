@@ -5,17 +5,20 @@
 <div class="container m-5">
   <div class="d-flex justify-content-center row">
     <% @movies.each do |movie| %>
-      <div class="card m-4" style="width: 18rem;">
-        <%= image_tag "#{movie.poster_url}", alt: "Le Wagon", class:"card-img-top" %>
-        <div class="card-body">
-          <h5 class="card-title"><%= movie.title %></h5>
-          <p class="card-text"><%= movie.rating %> stars<i class="fas fa-star"></i></p>
-          <p class="card-text"><%= movie.overview %></p>
-          <i class="fas fa-quote-left"></i><%= Bookmark.find_by(list: @list, movie: movie).comment %></p>
-          <%= link_to "Delete",
-            list_bookmark_path(@list, Bookmark.find_by(list: @list, movie: movie)),
-            method: :delete,
-            data: { confirm: "Are you sure?" } %>
+      <div class="col-12 col-md-4 mb-5">
+        <div class="card bg-primary border-light shadow-soft">
+          <%= image_tag "#{movie.poster_url}", class:"card-img-top rounded-top" %>
+          <div class="card-body">
+            <h5 class="card-title"><%= movie.title %></h5>
+            <p class="card-text"><%= movie.rating %> stars<i class="fas fa-star"></i></p>
+            <p class="card-text"><%= movie.overview %></p>
+            <i class="fas fa-quote-left"></i><%= Bookmark.find_by(list: @list, movie: movie).comment %></p>
+            <%= link_to "Delete",
+              list_bookmark_path(@list, Bookmark.find_by(list: @list, movie: movie)),
+              method: :delete,
+              class: "btn btn-primary text-danger mr-2 mb-2",
+              data: { confirm: "Are you sure to delete this bookmark?" } %>
+          </div>
         </div>
       </div>
     <% end %>
