@@ -1,6 +1,15 @@
 <h1>Lists index page for all lists</h1>
-<ul>
-  <% @lists.each do |list| %>
-    <li><%= link_to list.name, list_path(list) %></li>
-  <% end %>
-</ul>
+
+<div class="container">
+  <div class="d-flex justify-content-center row">
+    <% @lists.each do |list| %>
+      <div class="card" style="width: 18rem;">
+        <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1040&q=80" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><%= list.name %></h5>
+          <%= link_to list.name, list_path(list), class:"btn btn-primary" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
