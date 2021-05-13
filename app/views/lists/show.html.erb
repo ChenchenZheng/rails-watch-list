@@ -1,6 +1,12 @@
 <h1>Page show for one list</h1>
 <h2><%= @list.name %> list</h2>
 
+<%= simple_form_for [@list, @bookmark] do |f| %>
+  <%= f.input :comment %>
+  <%= f.association :movie %>
+  <%= f.button :submit %>
+<% end %>
+
 <div class="container">
   <div class="row">
     <% @movies.each do |movie| %>
