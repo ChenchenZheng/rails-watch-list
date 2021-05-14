@@ -1,9 +1,9 @@
 <nav class="navbar navbar-expand-lg navbar-transparent navbar-light navbar-theme-primary">
   <div class="d-flex justify-content-between align-items-baseline">
-    <div><%= link_to "Chenchen's list", lists_path, class:"nav-link" %></div>
+    <div><%= link_to "Chenchen's list", root_path, class:"nav-link" %></div>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <%= form_tag lists_path, class: 'd-flex', method: :get do %>
+        <%= form_tag root_path, class: 'd-flex', method: :get do %>
           <%= text_field_tag :query, params[:query], class: "form-control mr-2", placeholder: "Find a list"%>
           <%= submit_tag "Search", class: "btn btn-primary text-dark mr-2 mb-2" %>
         <% end %>
