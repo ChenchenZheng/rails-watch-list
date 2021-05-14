@@ -1,0 +1,15 @@
+current directory: /Users/chenchenzheng/code/ChenchenZheng/rails-watch-list/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.7.5/ext/bootsnap
+/Users/chenchenzheng/.rbenv/versions/2.6.6/bin/ruby -I /Users/chenchenzheng/.rbenv/versions/2.6.6/lib/ruby/2.6.0 -r ./siteconf20210514-96171-sglv2v.rb extconf.rb
+creating Makefile
+
+current directory: /Users/chenchenzheng/code/ChenchenZheng/rails-watch-list/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.7.5/ext/bootsnap
+make "DESTDIR=" clean
+
+current directory: /Users/chenchenzheng/code/ChenchenZheng/rails-watch-list/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.7.5/ext/bootsnap
+make "DESTDIR="
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+
+current directory: /Users/chenchenzheng/code/ChenchenZheng/rails-watch-list/vendor/bundle/ruby/2.6.0/gems/bootsnap-1.7.5/ext/bootsnap
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bootsnap.bundle ./.gem.20210514-96171-u5frg7/bootsnap
