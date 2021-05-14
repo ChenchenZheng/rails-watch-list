@@ -37,20 +37,24 @@
 <hr>
 
 <div class="container m-5">
-  <h2>All comments about this list</h2>
-  <% @reviews.each do |review| %>
-    <p><%= review.comment %></p>
-    <p><%= review.rating %></p>
-  <% end %>
-</div>
+  <div class="row">
+    <div class="col-6">
+      <h2>All comments about this list (<%= @reviews.count %>)</h2>
+      <% @reviews.each do |review| %>
+        <p><%= review.comment %></p>
+        <% (review.rating).times do |x| %>
+          <i class="fas fa-star mb-5"></i>
+        <% end %>
+      <% end %>
+    </div>
 
-
-
-<div class="container m-5">
-  <h2>Share your reviews of this list</h2>
-  <%= simple_form_for [@list, @review] do |f| %>
-    <%= f.input :comment %>
-    <%= f.input :rating %>
-    <%= f.submit class:"btn btn-primary mt-2" %>
-  <% end %>
+    <div class="col-6">
+      <h2>Share your reviews of this list</h2>
+      <%= simple_form_for [@list, @review] do |f| %>
+        <%= f.input :comment %>
+        <%= f.input :rating, collection: (1..5).to_a, label: "Rate this list", id:"review_rating" %>
+        <%= f.submit class:"btn btn-primary mt-2" %>
+      <% end %>
+    </div>
+  </div>
 </div>
