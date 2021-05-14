@@ -10,7 +10,7 @@
     <% @lists.each do |list| %>
       <div class="col-12 col-md-4 mb-5">
         <div class="card bg-primary border-light shadow-soft">
-          <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1040&q=80" class="card-img-top rounded-top" alt="...">
+          <%= cl_image_tag list.photo.key, height: 300, width: 400, crop: :fill, class:"card-img-top rounded-top" %>
           <div class="card-body">
             <h5 class="card-title d-flex justify-content-center"><%= list.name %></h5>
             <%= link_to "", list_path(list), class:"stretched-link" %>
